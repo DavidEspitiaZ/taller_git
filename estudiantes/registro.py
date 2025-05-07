@@ -19,3 +19,10 @@ def mostrar_tabla(estudiantes):
     print("-" * 18)
     for e in estudiantes_ordenados:
         print(f"{e['nombre']:<10} | {e['nota']:<5.1f}")
+
+def calcular_promedio(estudiantes):
+    if not estudiantes:
+        return 0.0
+    total = sum(e["nota"] for e in estudiantes)
+    promedio = total / len(estudiantes)
+    return round(promedio, 2)
