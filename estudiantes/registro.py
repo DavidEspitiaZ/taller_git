@@ -12,3 +12,10 @@ def cargar_estudiantes(ruta_csv):
             except ValueError:
                 continue
     return estudiantes
+
+def mostrar_tabla(estudiantes):
+    estudiantes_ordenados = sorted(estudiantes, key=lambda e: e["nombre"])
+    print(f"{'Nombre':<10} | {'Nota':<5}")
+    print("-" * 18)
+    for e in estudiantes_ordenados:
+        print(f"{e['nombre']:<10} | {e['nota']:<5.1f}")
